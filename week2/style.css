@@ -1,0 +1,161 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    background-color: #2d545e;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    background-color: #12343b;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    animation: myAnimation 2s infinite;
+}
+
+h3 {
+    text-align: center;
+}
+
+.grid-item {
+    border: 1.5px solid gray;
+    border-color: #2d545e;
+    border-radius: 20px;
+}
+
+.grid-item:hover {
+    border-color: #96dafa;
+}
+
+.grid-item img {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*Styling GRID*/
+#grid-floats {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+#grid-floats .grid-item:nth-child(1) {
+    grid-column-end: span 2;
+}
+
+/*Styling FLEX*/
+#grid-flex {
+    --gap: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: var(--gap);
+    margin-bottom: 30px;
+}
+
+#grid-flex .grid-item:nth-child(1) {
+    flex: calc(50% - var(--gap));
+}
+
+#grid-flex .grid-item {
+    flex: calc(25% - var(--gap));
+    flex-grow: 0;
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    #grid-floats {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #grid-floats .grid-item:nth-child(1),
+    #grid-floats .grid-item:nth-child(2) {
+        grid-column-end: span 3;
+    }
+
+    #grid-floats .grid-item {
+        grid-column-end: span 2;
+    }
+
+    #grid-flex .grid-item:nth-child(1),
+    #grid-flex .grid-item:nth-child(2) {
+        flex: calc(50% - var(--gap));
+    }
+    
+    #grid-flex .grid-item {
+        flex: calc(33% - var(--gap));
+    }
+    
+    #grid-flex .grid-item img {
+        width: 150px;
+    }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (max-width: 767px) {
+    #grid-floats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #grid-floats .grid-item:nth-child(1) {
+        grid-column-end: span 2;
+    }
+
+    #grid-floats .grid-item {
+        grid-column-end: span 1;
+    }
+    
+    #grid-floats .grid-item img {
+        width: 150px;
+    }
+    
+    #grid-flex .grid-item:nth-child(1) {
+        flex: 100%;
+    }
+
+    #grid-flex .grid-item {
+        flex: calc(50% - var(--gap));
+    }
+
+    #grid-flex .grid-item img {
+        width: 150px;
+    }
+}
+
+@keyframes myAnimation {
+
+    0%,
+    100% {
+        color: white;
+    }
+
+    50% {
+        color: #29d9fcbe;
+    }
+}
