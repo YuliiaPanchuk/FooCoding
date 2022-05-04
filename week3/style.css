@@ -235,7 +235,9 @@ ul {
     left: 0px;
 }
 
-
+.hover-text-inner h3, a {
+    padding-left: 10px;
+}
 
 .hover-text:hover {
     display: block;
@@ -276,19 +278,13 @@ ul {
 .img-wrapper {
     left: 0px;
     width: 100%;
-    /*position: absolute*/
 }
 
 img {
     max-width: 100%;
     clear: both;
     display: inline-block;
-    /*???*/
     z-index: 1;
-}
-
-.img-effect {
-    transition: all 0.5s ease-in-out;
 }
 
 article {
@@ -301,7 +297,6 @@ article {
     display: grid;
     grid-auto-rows: 50px;
     gap: 10px;
-    /*grid-gap*/
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
 }
 
@@ -349,4 +344,22 @@ article {
     max-width: 30rem;
     font-weight: normal;
     color: #999;
+}
+
+#disclaimer a {
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #999;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (max-width: 767px) {
+    
 }
