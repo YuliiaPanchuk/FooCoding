@@ -8,8 +8,8 @@ console.log("Привет, мир"); // Russian
 // 2. Consider the following code: console.log('I'm awesome'); (Fix it)
 console.log("I'm awesome");
 
-//3
-// 3.1 First, declare your variable x (do not initialize it yet).
+/* 3
+3.1 First, declare your variable x (do not initialize it yet). */
 let x;
 
 // 3.2 Add a console.log statement that explains in words what you think the value of x is, like in this example:
@@ -27,8 +27,8 @@ console.log("The value of variable 'x' is 4");
 // 3.6 Add a console.log statement that logs the value of x.
 console.log(x);
 
-// 4
-// 4. Declare a variable y and assign a string to it.
+/* 4
+4. Declare a variable y and assign a string to it. */
 let y = "I am a string";
 
 // 4.1 Write a console.log statement in which you explain in words what you think the value of the string is.
@@ -46,8 +46,8 @@ console.log("The value of variable 'y' is another string");
 // 4.5 Now console.log y again.
 console.log(y);
 
-// 5.
-// 5.1 Declare a variable z and assign the number 7.25 to it.
+/* 5.
+5.1 Declare a variable z and assign the number 7.25 to it. */
 let z = 7.25;
 
 // 5.2 console.log z.
@@ -93,7 +93,7 @@ animals.push("baby pig");
 // 6.7 Log your new array!
 console.log(animals);
 
-/*7. More strings
+/* 7
 Let's consider the following string: let myString = "this is a test" */ 
 let myString = "this is a test";
 
@@ -146,7 +146,7 @@ function checkingTypes(firstVar, secondVar) {
     }
 }
 
-checkingTypes(myArr, myArray) // "SAME TYPE"
+checkingTypes(myInt, x) // "SAME TYPE"
 checkingTypes(myStr, myBool) // "different types"
 
 
