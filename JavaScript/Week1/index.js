@@ -137,8 +137,7 @@ console.log(typeof myArr);
 
 // checks the types of two variables and prints out SAME TYPE if they are the same type
 function checkingTypes(firstVar, secondVar) {
-    // Using "===" operator since it checks already the type of the value
-    if (firstVar === secondVar) {
+    if (typeof firstVar === typeof secondVar) {
         console.log("SAME TYPE")
     } else {
         console.log(`The ${firstVar} has the type of ${typeof firstVar},
