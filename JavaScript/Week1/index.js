@@ -152,7 +152,7 @@ checkingTypes(myStr, myBool) // "different types"
 // 9. If x equals 7, and the only other statement is x = x % 3, what would be the new value of x?
 let anotherX = 7;
 anotherX %= 3;
-console.log(1); // 3 + 3 = 6; 7 - 6 = 1
+console.log(1); // Reminder is 1
 
 // 9.1 Add at least 3 console.log statements in which you show that you understand what % does.
 console.log(9 % 3); // expected to print 0
