@@ -77,19 +77,18 @@ function objFunction(myObj) {
     console.log(key, myObj[key]);
   }
 }
-
 objFunction(myObj); // prints properties and values
 
 // 4.Create a function named vehicleType that receives a color, and a code, 1 for car, 2 for motorbike. And prints 'a blue motorbike' for example when called as vehicleType("blue", 2)
 function vehicleType(color, vehicle) {
-  if (vehicle !== 1 && vehicle !== 2) {
-    return "Invalid input";
-  }
   if (vehicle === 1) {
-    return console.log("a " + color + " car");
+    console.log("a " + color + " car");
   }
-  if (vehicle === 2) {
-    return console.log("a " + color + " motorbike");
+  else if (vehicle === 2) {
+    console.log("a " + color + " motorbike");
+  }
+  else {
+    console.log("Invalid input")
   }
 }
 vehicleType("red", 1); // prints 'a red car'
@@ -109,10 +108,11 @@ console.log((3 === 3) ? "yes" : "no");
 // so that vehicle("blue", 1, 5) prints 'a blue used car'
 function vehicle(color, age, vehicleType) {
   if (age <= 2 && vehicleType === 1) {
-    return console.log("a " + color + " used car")
-  }
-  if (age >= 3 && age <= 5 && vehicleType === 2) {
-    return console.log("a " + color + " new car")
+    console.log("a " + color + " used car")
+  } else if (age >= 3 && age <= 5 && vehicleType === 2) {
+    console.log("a " + color + " new car")
+  } else {
+    console.log("Invalid input")
   }
 }
 vehicle("blue", 2, 1) // prints 'a blue used car'
@@ -121,7 +121,7 @@ vehicle("blue", 2, 1) // prints 'a blue used car'
 let vehiclesList = ["motorbike", "caravan", "bike", "car"];
 
 // 8.How do you get the third element from that list?
-vehiclesList[2];
+vehiclesList[2]; // array starts from 0
 
 // 9.Change the function vehicle to use the list of question 7. So that vehicle("green", 3, 1) prints "a green new bike".
 function vehicle(color, age, vehicleType) {
@@ -138,19 +138,29 @@ vehicle("blue", 2, 1) //  prints 'a blue used caravan'
 // "Amazing Joe's Garage, we service cars, motorbikes, caravans and bikes.". (Hint: use a for loop.)
 
 function adFunction() {
-  let vehiclesList = ["motorbike", "caravan", "bike", "car"];
+    //let vehiclesList = ["motorbike", "caravan", "bike", "car"];
   let addLogo = "Amazing Joe's Garage, we service ";
 
   for (let i = 0; i < vehiclesList.length; i++) {
-    addLogo += vehiclesList[i]
-
+    addLogo += vehiclesList[i] + "s"
+    
+    if (i === vehiclesList.length -1) {
+      addLogo += "."
+    }
+    else if (i === vehiclesList.length -2) {
+      addLogo += " and"
+    }
+    else{
+      addLogo += ", "
+    }
   }
   return addLogo
 }
 adFunction()
 
 // 11.What if you add one more vehicle to the list, can you have that added to the advertisement without changing the code for question 10?
-
+vehiclesList.push("anotherVehicle")
+adFunction()
 
 // 12.Create an empty object.
 let emptyObj = {};
@@ -177,12 +187,18 @@ let x = [1, 2, 3];
 let y = [1, 2, 3];
 let z = y;
 
-if (x === y || x == y) {
+// item is element in the array, index is its position in the array
+let same = (x.length == y.length) && x.every(function(item, index) {
+  return item === y[index];
+});
+console.log(same); // returns true
+
+/*  if (x === y || x == y) {
   console.log("X equals Y")
-}
+} */
 
 // What do you think will happen with x == y, x === y and z == y and z == x? Prove it!
-x == y; // returns false since each of the value has a different place in RAM
+x == y; // returns false since each of the value has a different place in memory
 x === y; // returns false 
 z == y; // returns true 
 z == x; // returns false 
