@@ -15,6 +15,8 @@
     'gone_with_the_wind_margaret_mitchell',
   ];
 
+  const bookInfo = {};
+
   // Creating ul and li elements
   const unorderedList = document.createElement('ul');
 
