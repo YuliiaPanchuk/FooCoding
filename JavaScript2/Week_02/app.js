@@ -21,39 +21,39 @@
       author: 'J. K. Rowling',
     },
     the_sun_also_rises: {
-      title: ' The sun also rises',
+      title: 'The sun also rises',
       language: 'English',
-      author: 'ernest_hemingway',
+      author: 'Ernest Hemingway',
     },
     number_the_stars: {
       title: 'Number the stars',
       language: 'English',
-      author: 'lois_lowry',
+      author: 'Lois Lowry',
     },
     brave_new_world: {
       title: 'Brave new world',
       language: 'English',
-      author: 'aldous_huxley',
+      author: 'Aldous Huxley',
     },
     remembrance_of_things_past: {
       title: 'Remembrance of things past',
       language: 'English',
-      author: 'marcel_proust',
+      author: 'Marcel Proust',
     },
     the_fault_in_our_stars: {
       title: 'The fault in our stars',
       language: 'English',
-      author: 'john_green',
+      author: 'John Green',
     },
     cold_comfort_farm: {
       title: 'Cold comfort farm',
       language: 'English',
-      author: 'stella_gibbons',
+      author: 'Stella gibbons',
     },
     mortal_engines: {
       title: 'Mortal engines',
       language: 'English',
-      author: 'philip_reeve',
+      author: 'Philip Reeve',
     },
     the_dark_tower: {
       title: 'The dark tower',
@@ -75,6 +75,8 @@
     const bookKeys = Object.keys(bookInfo);
 
     for (let i = 0; i < bookKeys.length; i++) {
+      // author.innerText = listItem.setAttribute('id', 'bookId'); // adding bookId inside li
+
       const listItem = document.createElement('li');
       const titles = document.createElement('h1');
       const author = document.createElement('h2');
@@ -83,7 +85,9 @@
 
       const book = bookInfo[bookKeys[i]];
       listItem.append(book.title); // adding each bookTitles key to li
-      author.innerText = listItem.setAttribute('id', 'bookId'); // adding bookId inside li
+      listItem.append(book.author);
+      listItem.append(book.language);
+
 
       // Appending elements
       document.body.appendChild(container);
@@ -93,6 +97,8 @@
       listItem.appendChild(author);
       listItem.appendChild(language);
       listItem.appendChild(images);
+
+      images.src = 
     }
   }
   bookGenerator();
