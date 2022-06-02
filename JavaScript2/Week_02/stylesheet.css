@@ -37,14 +37,26 @@ li {
   width: 300px;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
 .moreInfo h2,
-h3 {
+h3,
+h4 {
   padding-top: 60px;
   color: white;
 }
 
 button {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 15px;
   border-radius: 50px;
   background-color: #d6ccc2;

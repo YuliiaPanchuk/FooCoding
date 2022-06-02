@@ -84,9 +84,9 @@
   const container = document.createElement('div');
   container.setAttribute("class", "wrapper");
   const unorderedList = document.createElement('ul');
-  const title = document.createElement("title");
+  const title = document.createElement("h1");
+  document.body.append(title)
   title.innerText = "Top 10 books to read";
-  document.body.appendChild(title)
 
   function bookGenerator() {
     const bookKeys = Object.keys(bookInfo);
@@ -99,9 +99,9 @@
       divWrapper.setAttribute("class", "divWrapper")
 
       const listItem = document.createElement('li');
-      const titles = document.createElement('h1');
-      const author = document.createElement('h2');
-      const language = document.createElement('h3');
+      const titles = document.createElement('h2');
+      const author = document.createElement('h3');
+      const language = document.createElement('h4');
       const images = document.createElement('img');
       const btn = document.createElement("button");
 
