@@ -67,39 +67,83 @@
     },
   };
 
+  const bookImg = {
+    harry_potter_chamber_secret: "./images/Harry Potter.png",
+    the_sun_also_rises: "./images/The-sun-also-rises.png",
+    number_the_stars: "./images/Number-the-stars.png",
+    brave_new_world: "./images/Brave-New-World.png",
+    remembrance_of_things_past: "./images/Remembrance of Things Past.png",
+    the_fault_in_our_stars: "./images/The-Fault-in-Our-Stars.png",
+    cold_comfort_farm: "./images/Cold-Comfort-Farm.png",
+    mortal_engines: "./images/Mortal-Engines.png",
+    the_dark_tower: "./images/The-Dark-Tower.png",
+    gone_with_the_wind: "./images/Gone-with-the-Wind.png",
+  }
+
   // Creating elements
   const container = document.createElement('div');
   const unorderedList = document.createElement('ul');
+  container.setAttribute("class", "wrapper");
+
+
 
   function bookGenerator() {
     const bookKeys = Object.keys(bookInfo);
 
     for (let i = 0; i < bookKeys.length; i++) {
-      // author.innerText = listItem.setAttribute('id', 'bookId'); // adding bookId inside li
+      const myDiv = document.createElement("div")
+      myDiv.setAttribute("class", "moreInfo")
+
+      const divWrapper = document.createElement("div")
+      divWrapper.setAttribute("class", "divWrapper")
 
       const listItem = document.createElement('li');
       const titles = document.createElement('h1');
       const author = document.createElement('h2');
-      const language = document.createElement('p');
+      const language = document.createElement('h3');
       const images = document.createElement('img');
+      const btn = document.createElement("button");
 
       const book = bookInfo[bookKeys[i]];
-      listItem.append(book.title); // adding each bookTitles key to li
-      listItem.append(book.author);
-      listItem.append(book.language);
+      const bookImage = bookImg[bookKeys[i]];
 
+      titles.append(book.title);
+      author.append("Author: " + book.author);
+      language.append("Language: " + book.language);
+      // images.append(bookImage)
+      images.src = bookImage
+
+      btn.innerText = "More info"
+
+      // Appending images and myDiv inside divWrapper
+      divWrapper.appendChild(myDiv)
+      divWrapper.appendChild(images)
 
       // Appending elements
       document.body.appendChild(container);
       container.appendChild(unorderedList);
-      unorderedList.appendChild(listItem); // adding each li to ul
+      unorderedList.appendChild(listItem);
       listItem.appendChild(titles);
-      listItem.appendChild(author);
-      listItem.appendChild(language);
-      listItem.appendChild(images);
+      listItem.appendChild(divWrapper);
+      listItem.appendChild(btn);
 
-      images.src = 
+      myDiv.appendChild(author);
+      myDiv.appendChild(language);
+
+      myDiv.style.display = "none";
+
+      btn.addEventListener("click", function () {
+        if (myDiv.style.display === "block") {
+          myDiv.style.display = "none";
+        }
+        else {
+          myDiv.style.display = "block";
+        }
+      })
+
     }
+
+
   }
   bookGenerator();
 }
