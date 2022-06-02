@@ -80,12 +80,13 @@
     gone_with_the_wind: "./images/Gone-with-the-Wind.png",
   }
 
-  // Creating elements
+
   const container = document.createElement('div');
-  const unorderedList = document.createElement('ul');
   container.setAttribute("class", "wrapper");
-
-
+  const unorderedList = document.createElement('ul');
+  const title = document.createElement("title");
+  title.innerText = "Top 10 books to read";
+  document.body.appendChild(title)
 
   function bookGenerator() {
     const bookKeys = Object.keys(bookInfo);
