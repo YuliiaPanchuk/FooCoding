@@ -16,13 +16,11 @@ console.log(obj);
 
 const div = document.createElement("div");
 document.body.appendChild(div);
-
+div.setAttribute("class", "container")
 
 const poke = Object.keys(pokemon);
-
 for (let i = 0; i < poke.length; i++) {
   const images = document.createElement("img");
-
   if (pokemon[poke[i]]) {
     div.appendChild(images);
     images.src = pokemon[poke[i]];
