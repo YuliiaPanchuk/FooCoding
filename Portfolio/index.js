@@ -25,11 +25,13 @@ fetch(`https://firestore.googleapis.com/v1/projects/portfolio-797bb/databases/(d
       const imageLink = item.fields.image_url.stringValue;
       const image = createAndAppend("img", link, { class: "projectImage", src: imageLink })
 
+      const wrapperText = createAndAppend("div", container, { class: "wrapperText" })
+
       const getName = item.fields.name.stringValue;
-      const projectName = createAndAppend("h1", container, { text: getName })
+      const projectName = createAndAppend("p", wrapperText, { text: getName, class: "headline" })
 
       const getDescription = item.fields.description.stringValue;
-      const description = createAndAppend("p", container, { text: getDescription });
+      const description = createAndAppend("p", wrapperText, { text: getDescription, class: "description" });
 
     });
 
