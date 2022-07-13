@@ -1,0 +1,140 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.alertError {
+  color: red;
+}
+
+.mainPage {
+  /*background-color: #e1dfde;*/
+  margin: 0 auto;
+}
+
+/*Home section*/
+#home {
+  height: 50vw;
+}
+
+.navList {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+}
+
+.navList li {
+  list-style: none;
+  display: inline;
+  font-size: 20px;
+  padding-right: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  margin-top: 350px;
+  text-align: center;
+}
+
+.nameText {
+  font-size: 30px;
+}
+
+.devText {
+  font-size: 70px;
+}
+
+/*About section*/
+#about {
+  height: 50vw;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bioText {
+  width: 500px;
+  line-height: 28px;
+  font-size: medium;
+  text-align: justify;
+  padding-top: 20px;
+}
+
+.mainImage {
+  width: 12%;
+}
+
+/*Projects section*/
+#projects {
+  height: 50vw;
+  border-top: 1px solid black;
+}
+
+.projectImage {
+  height: 200px;
+}
+
+/*Contact section*/
+#contact {
+  height: 50vw;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=text],
+textarea {
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  width: 400px;
+}
+
+.contactButton button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+label {
+  position: relative;
+  display: block;
+}
+
+#contact p {
+  font-size: 50px;
+}
+
+/*Links*/
+.footer {
+  height: 200px;
+  background-color: #04AA6D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 30px;
+  padding-bottom: 25px;
+}
+
+i {
+  padding-right: 10px;
+}
