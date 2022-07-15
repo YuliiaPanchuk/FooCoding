@@ -40,3 +40,49 @@ fetch(`https://firestore.googleapis.com/v1/projects/portfolio-797bb/databases/(d
   .catch(error => {
     console.log(error);
   });
+
+const submitBtn = document.getElementById("submitBtn");
+
+submitBtn.addEventListener("click", function () {
+
+  const fullName = document.getElementById("name").value;
+  const userEmail = document.getElementById("email").value;
+  const userMessage = document.getElementById("message").value;
+
+  const data = {
+    fields: {
+      name: {
+        stringValue: fullName
+      },
+      email: {
+        stringValue: userEmail
+      },
+      message: {
+        stringValue: userMessage
+      }
+    }
+  };
+
+  document.getElementById("name").value = ""; // clear values after it was sent
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
+
+
+  fetch('https://firestore.googleapis.com/v1/projects/portfolio-797bb/databases/(default)/documents/message?documentId=' + Math.floor(Math.random() * 1000000), {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
+
+
+})
