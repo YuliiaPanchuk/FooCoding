@@ -34,8 +34,6 @@ fetch(`https://firestore.googleapis.com/v1/projects/portfolio-797bb/databases/(d
       const description = createAndAppend("p", wrapperText, { text: getDescription, class: "description" });
 
     });
-
-
   })
   .catch(error => {
     console.log(error);
@@ -82,7 +80,41 @@ submitBtn.addEventListener("click", function () {
     .catch((error) => {
       console.error('Error:', error);
     });
-
-
-
 })
+
+const colorsDelay = (color, delay) => {
+  const footer = document.getElementById("footer")
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      footer.style.backgroundColor = color;
+      res();
+    }, delay)
+  })
+}
+
+async function rainbow() {
+  await colorsDelay("red", 1000);
+  await colorsDelay("green", 1000);
+  colorsDelay("blue", 1000)
+}
+rainbow();
+
+// Scroll button
+let myBtn = document.getElementById("topBtn");
+
+// when the user scrolls down more than 20px btn will be displayed
+document.addEventListener("scroll", scrollFunc); // same as window.onscroll = function () { scrollFunc() };
+
+function scrollFunc() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    myBtn.style.display = "block";
+  } else {
+    myBtn.style.display = "none";
+  }
+}
+
+// When the user clicks the btn, scroll to the top of the document
+function topScroll() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
