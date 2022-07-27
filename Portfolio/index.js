@@ -82,6 +82,7 @@ submitBtn.addEventListener("click", function () {
     });
 })
 
+/*Rainbow*/
 const colorsDelay = (color, delay) => {
   const footer = document.getElementById("footer")
   return new Promise((res, rej) => {
