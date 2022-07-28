@@ -1,19 +1,6 @@
 'use strict';
 
 {
-  /*const bookTitles = [
-    'harry_potter_chamber_secrets',
-    'the_sun_also_rises',
-    'number_the_stars',
-    'brave_new_world',
-    'remembrance_of_things_past',
-    'the_fault_in_our_stars',
-    'cold_comfort_farm',
-    'mortal_engines',
-    'the_dark_tower',
-    'gone_with_the_wind',
-  ]; */
-
   const bookInfo = {
     harry_potter_chamber_secret: {
       title: 'Harry Potter chamber secret',
@@ -82,7 +69,9 @@
 
   const container = document.createElement('div');
   container.setAttribute('class', 'wrapper');
+
   const unorderedList = document.createElement('ul');
+  unorderedList.setAttribute("class", "ulImages");
   const title = document.createElement('h1');
   document.body.append(title);
   title.innerText = 'Top 10 books to read';
@@ -110,7 +99,6 @@
       titles.append(book.title);
       author.append('Author: ' + book.author);
       language.append('Language: ' + book.language);
-      // images.append(bookImage)
       images.src = bookImage;
 
       btn.innerText = 'More info';
