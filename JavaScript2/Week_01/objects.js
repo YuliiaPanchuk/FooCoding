@@ -1,19 +1,27 @@
-/* Do you code here
-      put yourself some challenges and try to acheive them
-      use console logs to see your results
-*/
+//Styling first container
+function mainContainer(mainWrapper) {
+  mainWrapper.style.height = '50vw';
+}
 
+function mainImg(coverImage) {
+  coverImage.src = './images/mainImage.png';
+  coverImage.style.marginTop = '10vw';
+  coverImage.style.marginLeft = '29vw';
+  coverImage.style.width = '40%';
+}
+
+// Styling h1 element
 function myHeadline(headline) {
-  // Styling h1 element
   headline.style.textAlign = 'center';
   headline.style.paddingBottom = '50px';
   headline.style.paddingTop = '50px';
-  headline.style.letterSpacing = '6px';
-  headline.style.color = '#247291';
+  headline.style.letterSpacing = '0.9px';
+  headline.style.fontSize = '3rem';
 }
 
+// Styling container
 function stylingContainer(container) {
-  // Styling container
+  container.style.height = '50vw';
   container.style.display = 'grid';
   container.style.justifyItems = 'center';
   container.style.gridTemplateColumns = 'repeat(5, 1fr)';
@@ -21,54 +29,64 @@ function stylingContainer(container) {
   container.style.gap = '1em';
 }
 
+// Styling images
 function stylingImages(images) {
-  // Styling images
   images.style.height = '300px';
   images.style.marginBottom = '15px';
   images.style.flexWrap = 'wrap';
   images.style.borderRadius = '20%';
+  images.style.backgroundColor.hover = 'black';
 }
 
+// Styling myDiv
 function stylingMyDiv(myDiv) {
-  // Styling myDiv
   myDiv.style.display = 'flex';
   myDiv.style.flexDirection = 'column';
   myDiv.style.flexWrap = 'wrap';
 }
 
+// Styling button
 function stylingBtn(btn) {
-  // Styling button
   btn.style.padding = '10px';
+  btn.style.border = 'none';
   btn.style.borderRadius = '30px';
-  btn.style.borderColor = '#D0C9C0';
+  btn.style.cursor = 'pointer';
+  btn.style.backgroundImage =
+    'linear-gradient(to top, #1f6032, #236a39, #28733f, #2c7d46, #30874d, #31894e, #328b50, #338d51, #31874c, #2e8247, #2c7c43, #29773e)';
 }
 
+// Styling footer
 function stylingFooter(footerF) {
-  // Styling footer
   footerF.style.display = 'flex';
   footerF.style.justifyContent = 'center';
   footerF.style.alignItems = 'center';
   footerF.style.paddingTop = '50px';
   footerF.style.height = '100px';
-  footerF.style.backgroundColor = '#247291';
 }
 
 fetch('https://www.breakingbadapi.com/api/characters')
-  .then((res) => res.json())
-  .then((data) => {
+  .then(res => res.json())
+  .then(data => {
     console.log(data);
 
     // Styling body
-    document.body.style.backgroundColor = '#ececec';
+    document.body.style.backgroundImage =
+      'linear-gradient(to left top, #093009, #0d3811, #114118, #164a1f, #1a5327, #195227, #185126, #175026, #11441e, #0b3816, #062d0e, #032202)';
 
     // Creating a div (container)
+    let mainWrapper = document.createElement('div');
+    let coverImage = document.createElement('img');
     let container = document.createElement('div');
     let headline = document.createElement('h1');
 
+    mainContainer(mainWrapper);
+    document.body.appendChild(mainWrapper);
+    mainImg(coverImage);
+    mainWrapper.appendChild(coverImage);
     myHeadline(headline);
 
     // Adding value to h1; adding headline to the DOM
-    headline.innerText = 'The Breaking Bad API';
+    headline.innerText = 'Actors';
     document.body.appendChild(headline);
 
     stylingContainer(container);
@@ -77,6 +95,8 @@ fetch('https://www.breakingbadapi.com/api/characters')
       // Adding properties to the HTML
       let nameAct = document.createElement('h2');
       let images = document.createElement('img');
+      images.setAttribute('id', 'actImage');
+
       let btn = document.createElement('button');
       let status = document.createElement('p');
       let bday = document.createElement('p');
@@ -163,7 +183,6 @@ fetch('https://www.breakingbadapi.com/api/characters')
           return;
         }
       }
-      // If both above statements are false, then user will see the following alert
       alert('Invalid input');
     });
   });
