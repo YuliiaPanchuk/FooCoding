@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.adminDiv {
+  width: 450px;
+  min-height: 500px;
+  height: auto;
+  border-radius: 5px;
+  margin: 2% auto;
+  padding: 2%;
+  background-image: linear-gradient(270deg, #ff5851 50%, #fa534c99 50%);
+}
+
+.adminInput:active,
+.adminInput:focus,
+.adminInput:hover {
+  outline: none;
+  border-bottom-color: #fa534c99;
+}
+
+.adminInput {
+  border: none;
+  border-bottom: 2px solid #d1d1d4;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  width: 75%;
+  transition: 0.2s;
+}
+
+.inputItem {
+  padding-top: 45px;
+}
+
+/*Button*/
+.logIn {
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 26px;
+  border: 1px solid #d4d3e8;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 30%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/*Data table*/
+.headerText {
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 50px 0;
+}
+
+.tableWrapper {
+  margin: 10px 70px 70px 50px;
+}
+
+.table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: center;
+}
+
+.dataImage {
+  width: 70px;
+}
+
+.dataDescription {
+  width: 40%;
+  line-height: 25px;
+}
+
+.addBtn {
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-radius: 26px;
+  border: 1px solid #d4d3e8;
+  text-transform: uppercase;
+  align-items: center;
+  box-shadow: 0px 2px 2px #fa534c99;
+  cursor: pointer;
+}
+
+#addBtn {
+  display: flex;
+  justify-content: flex-end;
+  width: 84%;
+  padding-bottom: 9px;
+}
+
+/*Edit Page*/
+.editWraper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.editForm {
+  padding: 100px;
+}
+
+.editSubmitBtn {
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 26px;
+  border: 1px solid #d4d3e8;
+  text-transform: uppercase;
+  align-items: center;
+  color: #4c489d;
+  box-shadow: 0px 2px 2px #5c5696;
+  cursor: pointer;
+}
+
+#editSubmitBtn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.label {
+  padding-bottom: 20px;
+}

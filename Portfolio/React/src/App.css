@@ -1,0 +1,435 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 45px;
+  border: none;
+  color: #ff5851;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.alertError {
+  color: red;
+}
+
+.mainPage {
+  margin: 0 auto;
+}
+
+/*Home section*/
+#home {
+  height: 50vw;
+}
+
+.navList {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  margin-right: 30px;
+}
+
+.navList li {
+  list-style: none;
+  display: inline;
+  font-size: 20px;
+  margin-right: 70px;
+  padding: 10px;
+  border: 1px solid transparent;
+}
+
+.navList li:hover {
+  border: 1px solid #ff5851;
+  border-radius: 20px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  text-align: center;
+  border: 8px solid #ff5851;
+  margin: 0 auto;
+  width: 600px;
+  padding: 200px;
+  margin-top: 210px;
+}
+
+.nameText {
+  font-size: 30px;
+}
+
+.devText {
+  font-size: 70px;
+}
+
+/*About section*/
+#about {
+  height: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.aboutContent {
+  width: 95%;
+  height: 95%;
+  background: linear-gradient(to right, #ff5851 0%, #ff5851 50%, #f8f8f8 50%, #f8f8f8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.aboutHeadline {
+  font-size: 40px;
+  padding-bottom: 35px;
+}
+
+.aboutText {
+  font-size: 22px;
+}
+
+.bioImage {
+  margin-left: 20%;
+}
+
+.bioText {
+  width: 450px;
+  letter-spacing: 1.5px;
+  line-height: 28px;
+  text-align: justify;
+}
+
+/*Projects section*/
+#projects {
+  height: 50vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.wraper {
+  border: 2px solid #ff5851;
+  padding: 30px;
+  filter: grayscale(1);
+}
+
+.wraper:hover {
+  filter: grayscale(0);
+}
+
+.projectImage {
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description {
+  width: 280px;
+  text-align: justify;
+  line-height: 25px;
+}
+
+.headline {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+/*Contact section*/
+
+#contact {
+  width: 100%;
+  display: flex;
+  min-height: 50vh;
+}
+
+.contact {
+  width: 450px;
+  min-height: 500px;
+  height: auto;
+  border-radius: 5px;
+  margin: 2% auto;
+  padding: 2%;
+  background-image: linear-gradient(270deg, #ff5851 50%, #fa534c99 50%);
+}
+
+.contactText {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 8px;
+}
+
+.contactWrapper {
+  width: 400px;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.contactForm,
+.contactMessage {
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #d1d1d4;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  width: 400px;
+}
+
+.contactForm:active,
+.contactForm:focus,
+.contactForm:hover,
+.contactMessage:active,
+.contactMessage:focus,
+.contactMessage:hover {
+  outline: none;
+  border-bottom-color: #ff5851;
+}
+
+.contactButton button {
+  font-size: 17px;
+  padding: 15px 35px;
+  border-radius: 26px;
+  letter-spacing: 3px;
+  border: 1px solid #f8f8f8;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+label {
+  position: relative;
+  display: block;
+}
+
+/*Links*/
+.footer {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 30px;
+  padding-bottom: 25px;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  #home {
+    height: auto;
+  }
+
+  .container {
+    width: 600px;
+    padding: 80px;
+    margin-top: 50px;
+  }
+
+  .nameText {
+    font-size: 20px;
+  }
+
+  .devText {
+    font-size: 60px;
+  }
+
+  .bioText {
+    padding-bottom: 40px;
+  }
+
+  #about {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  #projects {
+    height: auto;
+    display: grid;
+    grid-template-columns: 25% 25%;
+    justify-items: center;
+    row-gap: 30px;
+  }
+
+  .wraper {
+    width: 280px;
+  }
+
+  .mainImage {
+    width: 28%;
+  }
+
+  #contact {
+    height: auto;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  #contact p {
+    font-size: 40px;
+  }
+
+  .footer {
+    height: 145px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #home {
+    height: auto;
+  }
+
+  .navList {
+    justify-content: center;
+  }
+
+  .nameText {
+    font-size: 20px;
+  }
+
+  .devText {
+    font-size: 40px;
+  }
+
+  .container {
+    width: 240px;
+    padding: 100px 150px;
+    margin-top: 50px;
+  }
+
+  .mainImage {
+    width: 40%;
+  }
+
+  #about {
+    height: auto;
+    padding: 100px;
+  }
+
+  #projects {
+    height: auto;
+    display: grid;
+    grid-template-columns: 310px 310px;
+    justify-content: space-evenly;
+    row-gap: 30px;
+  }
+
+  .projectImage {
+    height: 140px;
+  }
+
+  .headline {
+    padding-top: 15px;
+    padding-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .description {
+    width: 250px;
+    line-height: 25px;
+  }
+
+  #contact {
+    height: auto;
+    padding: 100px;
+  }
+
+  #contact p {
+    font-size: 40px;
+  }
+
+  .footer {
+    height: 100px;
+  }
+
+  .footer p {
+    font-size: 25px;
+    padding-bottom: 15px;
+  }
+
+  .fa-xl {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .navList li {
+    padding-right: 15px;
+  }
+
+  #home {
+    height: auto;
+  }
+
+  .devText {
+    font-size: 25px;
+  }
+
+  .nameText {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 150px;
+    padding: 60px;
+    margin-top: 15px;
+  }
+
+  #about {
+    height: auto;
+    padding-top: 100px;
+  }
+
+  .mainImage {
+    width: 40%;
+  }
+
+  .bioText {
+    width: 330px;
+  }
+
+  #projects {
+    height: auto;
+    display: grid;
+    row-gap: 20px;
+    padding-top: 100px;
+  }
+
+  #contact {
+    height: auto;
+    padding: 100px;
+  }
+
+  #contact p {
+    font-size: 30px;
+  }
+
+  input[type='text'],
+  textarea {
+    width: 340px;
+  }
+
+  .footer {
+    height: 115px;
+  }
+}
