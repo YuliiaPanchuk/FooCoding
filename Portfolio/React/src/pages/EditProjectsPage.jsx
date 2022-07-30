@@ -14,9 +14,9 @@ export function EditProjectsPage () {
     const response = await fetchProjects();
 
     setProject(response[0]);
-    setName(response[0].fields.name.stringValue);
-    setImage(response[0].fields.image_url.stringValue);
-    setDescription(response[0].fields.description.stringValue);
+    setName(response[0].name);
+    setImage(response[0].image_url);
+    setDescription(response[0].description);
   };
 
   useEffect(() => {

@@ -235,15 +235,15 @@ label {
   padding-bottom: 25px;
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (max-width: 1440px) {
   #home {
-    height: auto;
+    height: 80vw;
   }
 
   .container {
-    width: 600px;
-    padding: 80px;
-    margin-top: 50px;
+    width: 650px;
+    padding: 250px;
+    margin-top: 120px;
   }
 
   .nameText {
@@ -259,7 +259,7 @@ label {
   }
 
   #about {
-    padding-top: 100px;
+    height: 70vw;
     padding-bottom: 100px;
   }
 
@@ -273,10 +273,6 @@ label {
 
   .wraper {
     width: 280px;
-  }
-
-  .mainImage {
-    width: 28%;
   }
 
   #contact {
@@ -294,7 +290,96 @@ label {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 1024px) {
+  #home {
+    height: 100vw;
+  }
+
+  .navList {
+    justify-content: center;
+  }
+
+  .nameText {
+    font-size: 20px;
+  }
+
+  .devText {
+    font-size: 40px;
+  }
+
+  .container {
+    width: 40%;
+    padding: 230px;
+    margin-top: 50px;
+  }
+
+  #about {
+    height: auto;
+  }
+
+  .aboutHeadline {
+    font-size: 25px;
+  }
+
+  .aboutText {
+    font-size: 15px;
+  }
+
+  .bioText {
+    padding: 50px;
+  }
+
+  #projects {
+    height: auto;
+    display: grid;
+    grid-template-columns: 310px 310px;
+    justify-content: space-evenly;
+    row-gap: 30px;
+  }
+
+  .bioImage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bioImage svg {
+    width: 90%;
+  }
+
+  .headline {
+    padding-top: 15px;
+    padding-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .description {
+    width: 250px;
+    line-height: 25px;
+  }
+
+  #contact {
+    height: auto;
+  }
+
+  #contact p {
+    font-size: 40px;
+  }
+
+  .footer {
+    height: 100px;
+  }
+
+  .footer p {
+    font-size: 25px;
+    padding-bottom: 15px;
+  }
+
+  .fa-xl {
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 768px) {
   #home {
     height: auto;
   }
@@ -317,13 +402,8 @@ label {
     margin-top: 50px;
   }
 
-  .mainImage {
-    width: 40%;
-  }
-
   #about {
-    height: auto;
-    padding: 100px;
+    height: 100vw;
   }
 
   #projects {
@@ -331,11 +411,16 @@ label {
     display: grid;
     grid-template-columns: 310px 310px;
     justify-content: space-evenly;
-    row-gap: 30px;
+    gap: 20px;
   }
+
 
   .projectImage {
     height: 140px;
+  }
+
+  .wraper {
+    width: auto;
   }
 
   .headline {
@@ -351,7 +436,6 @@ label {
 
   #contact {
     height: auto;
-    padding: 100px;
   }
 
   #contact p {
@@ -373,8 +457,13 @@ label {
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
+  .navList {
+    margin: 0;
+  }
+
   .navList li {
-    padding-right: 15px;
+    padding-right: 0;
+    margin-right: 0;
   }
 
   #home {
@@ -393,15 +482,24 @@ label {
     width: 150px;
     padding: 60px;
     margin-top: 15px;
+    margin-bottom: 50px;
   }
 
   #about {
     height: auto;
-    padding-top: 100px;
+  }
+
+  .aboutContent {
+    background: linear-gradient(to bottom, #ff5851 0%, #ff5851 50%, #f8f8f8 50%, #f8f8f8 100%);
+    flex-direction: column;
   }
 
   .mainImage {
     width: 40%;
+  }
+
+  .bioImage {
+    margin: 0;
   }
 
   .bioText {
@@ -412,21 +510,15 @@ label {
     height: auto;
     display: grid;
     row-gap: 20px;
-    padding-top: 100px;
+    grid-template-columns: 310px;
   }
 
   #contact {
     height: auto;
-    padding: 100px;
   }
 
   #contact p {
     font-size: 30px;
-  }
-
-  input[type='text'],
-  textarea {
-    width: 340px;
   }
 
   .footer {

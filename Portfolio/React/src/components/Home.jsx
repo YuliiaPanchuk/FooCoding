@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function Home () {
   return (
@@ -18,7 +19,7 @@ export function Home () {
             <a href="#contact">Contact</a>
           </li>
           <li>
-            <a href="/logIn">Admin</a>
+            <Link to="logIn">Admin</Link>
           </li>
         </ul>
       </nav>
