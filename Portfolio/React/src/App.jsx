@@ -9,7 +9,7 @@ export function App () {
   
   return (
     <div className="app">
-      <BrowserRouter>
+      <BrowserRouter basename={'/FooCoding/my-portfolio/'}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/logIn" element={<AdminLog />} />
