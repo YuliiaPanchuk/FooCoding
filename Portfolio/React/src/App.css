@@ -235,7 +235,7 @@ label {
   padding-bottom: 25px;
 }
 
-@media (max-width: 1440px) {
+@media (min-width: 1440px) {
   #home {
     height: 80vw;
   }
