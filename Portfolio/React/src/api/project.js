@@ -1,4 +1,4 @@
-import { getFirebaseApp, getFirestore, addDoc, collection } from "./firebase";
+import { getFirebaseApp, getFirestore, addDoc, collection } from './firebase';
 
 const FIREBASE_URL = 'https://firestore.googleapis.com/v1';
 
@@ -24,80 +24,74 @@ export async function fetchProjects() {
 
 /**
  * Create a new project in Firebase.
- * 
- * @param {string} name 
- * @param {string} description 
- * @param {string} link 
- * @param {string} imageUrl 
+ *
+ * @param {string} name
+ * @param {string} description
+ * @param {string} link
+ * @param {string} imageUrl
  * @returns True, if the project was created; Otherwise, False.
  */
 export async function createProject(name, description, link, image_url) {
   const db = getFirestore(getFirebaseApp());
 
   try {
-    const docRef = await addDoc(collection(db, "projects"), {
+    const docRef = await addDoc(collection(db, 'projects'), {
       name,
       description,
       link,
       image_url,
     });
-    console.log("Document written with ID: ", docRef.id);
+    console.log('Document written with ID: ', docRef.id);
     return true;
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error('Error adding document: ', e);
     return false;
   }
 }
 
 /**
- * 
- * @param {string} documentId 
- * @param {string} name 
- * @param {string} description 
- * @param {string} imageUrl 
+ *
+ * @param {string} documentId
+ * @param {string} name
+ * @param {string} description
+ * @param {string} imageUrl
  * @returns True, if the project was updated; Otherwise, False.
  */
 export async function updateProject(idToken, documentId, name, description, imageUrl) {
   // https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/patch
-  const response = await fetch(
-    `${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}/${documentId}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authentication': `Bearer ${idToken}`
-      },
-      body: JSON.stringify({
-        fields: {
-          name: {
-            stringValue: name,
-          },
-          description: {
-            stringValue: description,
-          },
-          image_url: {
-            stringValue: imageUrl,
-          },
+  const response = await fetch(`${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}/${documentId}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authentication: `Bearer ${idToken}`,
+    },
+    body: JSON.stringify({
+      fields: {
+        name: {
+          stringValue: name,
         },
-      }),
-    }
-  );
+        description: {
+          stringValue: description,
+        },
+        image_url: {
+          stringValue: imageUrl,
+        },
+      },
+    }),
+  });
 
   return response.status === 200; // OK
 }
 
 export async function deleteProject(idToken, documentId) {
   // https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/delete
-  const response = await fetch(
-    `${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}/${documentId}`,
-    {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authentication': `Bearer ${idToken}`
-      },
-    }
-  );
+  const response = await fetch(`${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}/${documentId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authentication: `Bearer ${idToken}`,
+    },
+  });
 
   return response.status === 200; // OK
 }

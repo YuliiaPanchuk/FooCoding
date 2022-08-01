@@ -3,13 +3,13 @@ import { sendMessageForm } from '../api/message';
 
 export function Contact() {
   const fullName = useRef(null); // null = init value
-  const userEmail = useRef(null); // the same as "document.getElementById('name').value;"
+  const userEmail = useRef(null);
   const userMessage = useRef(null);
 
   function submit() {
     sendMessageForm(fullName.current.value, userEmail.current.value, userMessage.current.value);
 
-    fullName.current.value = ''; // to clear inputs after the submit btn was clicked
+    fullName.current.value = '';
     userEmail.current.value = '';
     userMessage.current.value = '';
   }
@@ -17,7 +17,6 @@ export function Contact() {
   return (
     <div id="contact">
       <div className="contact">
-
         <div className="contactText">
           <p>Contact me</p>
         </div>
@@ -32,10 +31,16 @@ export function Contact() {
             <label htmlFor="email">Email Address</label>
             <input className="contactForm" type="text" name="email" ref={userEmail} required />
           </div>
-
+          
           <div className="messageForm">
             <label htmlFor="message">Your Message</label>
-            <textarea className="contactMessage" name="message" ref={userMessage} style={{ height: '200px' }} required />
+            <textarea
+              className="contactMessage"
+              name="message"
+              ref={userMessage}
+              style={{ height: '200px' }}
+              required
+            />
           </div>
 
           <div className="contactButton">
@@ -47,4 +52,4 @@ export function Contact() {
       </div>
     </div>
   );
-};
+}

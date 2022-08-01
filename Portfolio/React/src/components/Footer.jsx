@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Footer () {
+export function Footer() {
   return (
     <div className="footer">
       <p>Follow me</p>
@@ -14,4 +14,4 @@ export function Footer () {
       </div>
     </div>
   );
-};
+}

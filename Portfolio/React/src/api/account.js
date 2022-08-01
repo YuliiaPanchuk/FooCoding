@@ -23,9 +23,4 @@ export async function signInWithPassword(email, password) {
     // user invalid credentials
     return false;
   }
-
-  // TODO: Save the response somewhere, so we can access it when sending the other requests.
-  // TODO: Create a function to remove that variable, as a sign out function
-  // TODO: Create a function that helps to check if the user is signed in
-  // TODO: Return a response so we know if the user signed in
 }
