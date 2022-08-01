@@ -16,7 +16,7 @@ export async function sendMessageForm(fullName, userEmail, userMessage) {
   //Getting data from contact form and sends it to firebase
   const response = await fetch(
     'https://firestore.googleapis.com/v1/projects/portfolio-797bb/databases/(default)/documents/message?documentId=' +
-    Math.floor(Math.random() * 1000000), //Adding unique number to each item
+      Math.floor(Math.random() * 1000000), //Adding unique number to each item
     {
       method: 'POST',
       headers: {
