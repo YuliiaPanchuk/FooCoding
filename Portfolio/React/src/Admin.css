@@ -140,6 +140,10 @@ td {
   #addBtn {
     width: auto;
   }
+
+  td {
+    padding: 5px;
+  }
 }
 
 @media (max-width: 1024px) {}
