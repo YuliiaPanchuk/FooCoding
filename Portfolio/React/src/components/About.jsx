@@ -1,25 +1,27 @@
 import React from 'react';
-import { Image } from '../Image';
 
-export function About () {
+export function About() {
   return (
-    <div id="about">
+    <section id="about">
+      <h2 className="numberedHeader">About me</h2>
       <div className="aboutContent">
         <div className="bioText">
-          <p className="aboutHeadline"> {'<h1> ABOUT ME </h1>'}</p>
           <p className="aboutText">
-            I am a full-stack developer student with a goal to gain industry experience in building
-            websites and web applications. I specialize in HTML, CSS, JavaScript, React and have
-            some knowledge of C#, and C++. I am looking forward to integrate into the IT working
-            industry and implement my knowledge into real working projects. Also, I have a "hunger"
-            to learn new things, programs, etc. to extend my knowledge.
+            My interest in web development started back in 2020 when I moved to Sweden and switched
+            my career from a Customer Support Agent to a Frontend developer. <br /> <br /> I am
+            currently working on my final project at FooCoding where I use{' '}
+            <span>HTML, CSS, JavaScript, Typescript, React, and Firebase</span>. <br /> <br />{' '}
+            Furthermore, I am familiar with <span>Node.js, JSON, Express, Git, C#, and C++</span>.
+            My goal is to DEVELOP applications that will make an impact on the world. I am EAGER to
+            develop my current skills and GAIN new knowledge. <br />
+            <br /> I'm not a pro yet, but my goal is to become one.
           </p>
         </div>
 
         <div className="bioImage">
-          <Image />
+          <img className="profileImage" src={require('../images/profileImage.jpg')} alt="" />
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+}
