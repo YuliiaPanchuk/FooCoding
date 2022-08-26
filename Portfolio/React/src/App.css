@@ -3,8 +3,29 @@
   padding: 0px;
 }
 
+body {
+  background-color: #0a192f;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+.numberedHeader::before {
+  counter-increment: section 1;
+  content: "0" counter(section) ".";
+  margin-right: 10px;
+  color: #64ffda;
+  font-weight: 400;
+  bottom: 4px;
+  font-size: 16px;
+}
+
+.numberedHeader {
+  font-size: 26px;
+  color: #ccd6f6;
+  font-weight: 600;
+  margin: 20px;
 }
 
 #topBtn {
@@ -28,11 +49,7 @@ html {
   margin: 0 auto;
 }
 
-/*Home section*/
-#home {
-  height: 50vw;
-}
-
+/*Navbar section*/
 .navList {
   display: flex;
   justify-content: flex-end;
@@ -42,40 +59,86 @@ html {
 }
 
 .navList li {
+  counter-increment: item 1;
   list-style: none;
-  display: inline;
-  font-size: 20px;
-  margin-right: 70px;
   padding: 10px;
-  border: 1px solid transparent;
+  color: #a8b2d1;
+  font-size: 13px;
 }
 
-.navList li:hover {
-  border: 1px solid #ff5851;
-  border-radius: 20px;
-  text-align: center;
+.navList li::before {
+  content: "0" counter(item) ".";
+  color: #64ffda;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #a8b2d1;
+  font-size: 16px;
+  padding: 10px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.container {
-  text-align: center;
-  border: 8px solid #ff5851;
+.navList li a:hover {
+  color: #64ffda;
+}
+
+/*Home section*/
+#home {
+  height: 50vw;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
   margin: 0 auto;
-  width: 600px;
-  padding: 200px;
-  margin-top: 210px;
+  width: 50%;
+  height: 70vh;
 }
 
-.nameText {
-  font-size: 30px;
+.homeSectionCenter h1 {
+  margin: 10px 0;
+  color: #64ffda;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
-.devText {
+.homeSectionCenter h3 {
+  margin: 10px 0;
+  line-height: 0.9;
+  color: #8892b0;
+}
+
+.homeSectionCenter p {
+  margin: 10px 0;
+  max-width: 540px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #22585e;
+}
+
+.contactLink {
+  margin: 35px 0;
+  border-radius: 6px;
+}
+
+.contactLink a {
+  border: 1px solid #64ffda;
+  color: #64ffda;
+  padding: 15px 90px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: small;
+}
+
+.bigHeader {
+  margin: 10px 0;
   font-size: 70px;
+  color: #ccd6f6;
+  line-height: 1.1;
 }
 
 /*About section*/
@@ -88,32 +151,57 @@ a {
 }
 
 .aboutContent {
-  width: 95%;
-  height: 95%;
-  background: linear-gradient(to right, #ff5851 0%, #ff5851 50%, #f8f8f8 50%, #f8f8f8 100%);
+  border-top: 1px solid #8892b0;
+  border-bottom: 1px solid #8892b0;
+  width: 50%;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
-.aboutHeadline {
-  font-size: 40px;
-  padding-bottom: 35px;
+.aboutMeHeader {
+  font-size: 26px;
+  color: #ccd6f6;
+  font-weight: 600;
+  margin: 20px;
 }
 
-.aboutText {
-  font-size: 22px;
-}
-
-.bioImage {
-  margin-left: 20%;
+.aboutMeHeader::before {
+  counter-increment: section 1;
+  content: "0" counter(section) ".";
+  margin-right: 10px;
+  color: #64ffda;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .bioText {
-  width: 450px;
-  letter-spacing: 1.5px;
-  line-height: 28px;
+  width: 60%;
   text-align: justify;
+}
+
+.aboutText {
+  padding: 25px;
+  color: #22585e;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+span {
+  color: #a8b2d1;
+}
+
+.bioImage {
+  text-align: center;
+  width: 60%;
+}
+
+.profileImage {
+  width: 35%;
+  margin-top: 44px;
+  border: 1px solid #22585e;
+}
+
+.profileImage:hover {
+  opacity: 1;
 }
 
 /*Projects section*/
@@ -124,8 +212,22 @@ a {
   align-items: center;
 }
 
+.projectsWrapper {
+  border-top: 1px solid #8892b0;
+  border-bottom: 1px solid #8892b0;
+  width: 50%;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+.listProjects {}
+
+
+/*  
 .wraper {
-  border: 2px solid #ff5851;
   padding: 30px;
   filter: grayscale(1);
 }
@@ -152,6 +254,8 @@ a {
   padding-bottom: 20px;
   font-size: 30px;
 }
+*/
+
 
 /*Contact section*/
 
@@ -233,294 +337,4 @@ label {
 .footer p {
   font-size: 30px;
   padding-bottom: 25px;
-}
-
-@media (min-width: 1440px) {
-  #home {
-    height: 80vw;
-  }
-
-  .container {
-    width: 650px;
-    padding: 250px;
-    margin-top: 120px;
-  }
-
-  .nameText {
-    font-size: 20px;
-  }
-
-  .devText {
-    font-size: 60px;
-  }
-
-  .bioText {
-    padding-bottom: 40px;
-  }
-
-  #about {
-    height: 70vw;
-    padding-bottom: 100px;
-  }
-
-  #projects {
-    height: auto;
-    display: grid;
-    grid-template-columns: 25% 25%;
-    justify-items: center;
-    row-gap: 30px;
-  }
-
-  .wraper {
-    width: 280px;
-  }
-
-  #contact {
-    height: auto;
-    padding-top: 150px;
-    padding-bottom: 150px;
-  }
-
-  #contact p {
-    font-size: 40px;
-  }
-
-  .footer {
-    height: 145px;
-  }
-}
-
-@media (max-width: 1024px) {
-  #home {
-    height: 100vw;
-  }
-
-  .navList {
-    justify-content: center;
-  }
-
-  .nameText {
-    font-size: 20px;
-  }
-
-  .devText {
-    font-size: 40px;
-  }
-
-  .container {
-    width: 40%;
-    padding: 230px;
-    margin-top: 50px;
-  }
-
-  #about {
-    height: auto;
-  }
-
-  .aboutHeadline {
-    font-size: 25px;
-  }
-
-  .aboutText {
-    font-size: 15px;
-  }
-
-  .bioText {
-    padding: 50px;
-  }
-
-  #projects {
-    height: auto;
-    display: grid;
-    grid-template-columns: 310px 310px;
-    justify-content: space-evenly;
-    row-gap: 30px;
-  }
-
-  .bioImage {
-    display: flex;
-    justify-content: center;
-  }
-
-  .bioImage svg {
-    width: 90%;
-  }
-
-  .headline {
-    padding-top: 15px;
-    padding-bottom: 8px;
-    font-size: 15px;
-  }
-
-  .description {
-    width: 250px;
-    line-height: 25px;
-  }
-
-  #contact {
-    height: auto;
-  }
-
-  #contact p {
-    font-size: 40px;
-  }
-
-  .footer {
-    height: 100px;
-  }
-
-  .footer p {
-    font-size: 25px;
-    padding-bottom: 15px;
-  }
-
-  .fa-xl {
-    font-size: 1.25em;
-  }
-}
-
-@media (max-width: 768px) {
-  #home {
-    height: auto;
-  }
-
-  .navList {
-    justify-content: center;
-  }
-
-  .nameText {
-    font-size: 20px;
-  }
-
-  .devText {
-    font-size: 40px;
-  }
-
-  .container {
-    width: 240px;
-    padding: 100px 150px;
-    margin-top: 50px;
-  }
-
-  #about {
-    height: 100vw;
-  }
-
-  #projects {
-    height: auto;
-    display: grid;
-    grid-template-columns: 310px 310px;
-    justify-content: space-evenly;
-    gap: 20px;
-  }
-
-  .projectImage {
-    height: 140px;
-  }
-
-  .wraper {
-    width: auto;
-  }
-
-  .headline {
-    padding-top: 15px;
-    padding-bottom: 8px;
-    font-size: 15px;
-  }
-
-  .description {
-    width: 250px;
-    line-height: 25px;
-  }
-
-  #contact {
-    height: auto;
-  }
-
-  #contact p {
-    font-size: 40px;
-  }
-
-  .footer {
-    height: 100px;
-  }
-
-  .footer p {
-    font-size: 25px;
-    padding-bottom: 15px;
-  }
-
-  .fa-xl {
-    font-size: 1.25em;
-  }
-}
-
-@media (min-width: 375px) and (max-width: 767px) {
-  .navList {
-    margin: 0;
-  }
-
-  .navList li {
-    padding-right: 0;
-    margin-right: 0;
-  }
-
-  #home {
-    height: auto;
-  }
-
-  .devText {
-    font-size: 25px;
-  }
-
-  .nameText {
-    font-size: 15px;
-  }
-
-  .container {
-    width: 150px;
-    padding: 60px;
-    margin-top: 15px;
-    margin-bottom: 50px;
-  }
-
-  #about {
-    height: auto;
-  }
-
-  .aboutContent {
-    background: linear-gradient(to bottom, #ff5851 0%, #ff5851 50%, #f8f8f8 50%, #f8f8f8 100%);
-    flex-direction: column;
-  }
-
-  .mainImage {
-    width: 40%;
-  }
-
-  .bioImage {
-    margin: 0;
-  }
-
-  .bioText {
-    width: 330px;
-  }
-
-  #projects {
-    height: auto;
-    display: grid;
-    row-gap: 20px;
-    grid-template-columns: 310px;
-  }
-
-  #contact {
-    height: auto;
-  }
-
-  #contact p {
-    font-size: 30px;
-  }
-
-  .footer {
-    height: 115px;
-  }
 }

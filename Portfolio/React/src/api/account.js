@@ -13,7 +13,6 @@ export async function signInWithPassword(email, password) {
   const auth = getAuth();
 
   try {
-    // https://firebase.google.com/docs/auth/web/start#web-version-9_2
     await signInWithEmailAndPassword(auth, email, password);
     return true;
   } catch (error) {
