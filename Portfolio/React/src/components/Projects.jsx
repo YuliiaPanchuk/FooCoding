@@ -21,25 +21,28 @@ export function Projects() {
         {projects.map((projectItem) => (
           <ul className="wraper" key={projectItem.id}>
             <li className="listProjects">
-
               <div className="projectContent">
-                <h3 className="headline">{projectItem.name}</h3>
-                <p className="description">{projectItem.description}</p>
+                <div>
+                  <h3 className="headline">{projectItem.name}</h3>
 
-                <ul className="projectSkillsLink">
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                </ul>
+                  <div className="descriptionWrapper">
+                    <p className="description">{projectItem.description}</p>
+                  </div>
+
+                  <ul className="projectSkillsLink">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                  </ul>
+                </div>
 
                 <div className="projectSource">
                   <a href="/GITHUB_PAGE" rel="noreferrer"></a>
                   <a href="/GITHUB_PAGE" rel="noreferrer"></a>
                 </div>
-
               </div>
 
-              <div className="projectImage">
+              <div className="projectImageWrapper">
                 <a href={projectItem.link}>
                   <img className="projectImage" src={projectItem.image_url} alt="" />
                 </a>
