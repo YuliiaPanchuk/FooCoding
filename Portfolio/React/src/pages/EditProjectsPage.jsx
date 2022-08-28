@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { isSignedIn } from '../api/account';
 import { fetchProjects } from '../api/project';
 
-export function EditProjectsPage () {
+export function EditProjectsPage() {
   const navigate = useNavigate();
   const [project, setProject] = useState(undefined);
   const [name, setName] = useState('');
@@ -22,7 +22,7 @@ export function EditProjectsPage () {
   useEffect(() => {
     // check if user is signed in
     if (!isSignedIn()) {
-      navigate("/");
+      navigate('/');
     }
 
     displayProjects();
@@ -83,4 +83,4 @@ export function EditProjectsPage () {
       </div>
     </>
   );
-};
+}

@@ -7,17 +7,17 @@
   width: 450px;
   min-height: 500px;
   height: auto;
-  border-radius: 5px;
   margin: 2% auto;
   padding: 2%;
-  background-image: linear-gradient(270deg, #ff5851 50%, #fa534c99 50%);
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .adminInput:active,
 .adminInput:focus,
 .adminInput:hover {
   outline: none;
-  border-bottom-color: #fa534c99;
+  border-bottom-color: #64ffda;
 }
 
 .adminInput {
@@ -25,26 +25,25 @@
   border-bottom: 2px solid #d1d1d4;
   background: none;
   padding: 10px;
-  padding-left: 24px;
-  width: 75%;
-  transition: 0.2s;
+  color: #fff;
 }
 
 .inputItem {
   padding-top: 45px;
+  display: flex;
+  flex-direction: column;
 }
 
 /*Button*/
 .logIn {
-  margin-top: 30px;
-  padding: 15px;
-  border-radius: 26px;
-  border: 1px solid #d4d3e8;
-  text-transform: uppercase;
-  font-weight: 700;
-  width: 30%;
+  background-color: transparent;
+  border: 1px solid #64ffda;
+  color: #64ffda;
+  font-size: 17px;
+  padding: 15px 35px;
+  letter-spacing: 3px;
   cursor: pointer;
-  transition: 0.2s;
+  margin-top: 60px;
 }
 
 /*Data table*/

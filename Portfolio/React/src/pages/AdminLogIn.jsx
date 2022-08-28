@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import '../Admin.css';
 import { signInWithPassword } from '../api/account';
 
@@ -11,15 +11,14 @@ export function AdminLog() {
   async function logIn() {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    
+
     const signedIn = await signInWithPassword(email, password);
-    
+
     // Check if the user is signed in
     if (signedIn) {
-      navigate("/admin");
-    }
-    else {
-      alert("Invalid user!");
+      navigate('/admin');
+    } else {
+      alert('Invalid user!');
     }
   }
 
@@ -44,4 +43,4 @@ export function AdminLog() {
       </div>
     </div>
   );
-};
+}

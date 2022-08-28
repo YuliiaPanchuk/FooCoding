@@ -15,6 +15,7 @@ export async function fetchProjects() {
   const data = await response.json();
   return data.documents.map((x) => ({
     id: x.name,
+    github_link: x.fields.github_link.stringValue,
     image_url: x.fields.image_url.stringValue,
     name: x.fields.name.stringValue,
     description: x.fields.description.stringValue,
@@ -31,12 +32,13 @@ export async function fetchProjects() {
  * @param {string} imageUrl
  * @returns True, if the project was created; Otherwise, False.
  */
-export async function createProject(name, description, link, image_url) {
+export async function createProject(name, github_link, description, link, image_url) {
   const db = getFirestore(getFirebaseApp());
 
   try {
     const docRef = await addDoc(collection(db, 'projects'), {
       name,
+      github_link,
       description,
       link,
       image_url,
@@ -53,11 +55,12 @@ export async function createProject(name, description, link, image_url) {
  *
  * @param {string} documentId
  * @param {string} name
+ * @param {string} github_link
  * @param {string} description
  * @param {string} imageUrl
  * @returns True, if the project was updated; Otherwise, False.
  */
-export async function updateProject(idToken, documentId, name, description, imageUrl) {
+export async function updateProject(idToken, documentId, name, github_link, description, imageUrl) {
   // https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents/patch
   const response = await fetch(`${FIREBASE_URL}/${PARENT}/${COLLECTION_ID}/${documentId}`, {
     method: 'POST',
@@ -69,6 +72,9 @@ export async function updateProject(idToken, documentId, name, description, imag
       fields: {
         name: {
           stringValue: name,
+        },
+        github_link: {
+          stringValue: github_link,
         },
         description: {
           stringValue: description,

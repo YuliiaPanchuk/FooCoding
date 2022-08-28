@@ -1,12 +1,11 @@
-import {HomePage} from './pages/HomePage';
+import { HomePage } from './pages/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {Admin} from './pages/Admin';
-import {AdminLog} from './pages/AdminLogIn';
-import {EditProjectsPage} from './pages/EditProjectsPage';
-import {AddProject} from './pages/AddProject';
+import { Admin } from './pages/Admin';
+import { AdminLog } from './pages/AdminLogIn';
+import { EditProjectsPage } from './pages/EditProjectsPage';
+import { AddProject } from './pages/AddProject';
 
-export function App () {
-  
+export function App() {
   return (
     <div className="app">
       <BrowserRouter basename={'/FooCoding/my-portfolio/'}>
@@ -20,4 +19,4 @@ export function App () {
       </BrowserRouter>
     </div>
   );
-};
+}

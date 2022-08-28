@@ -11,16 +11,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.numberedHeader::before {
-  counter-increment: section 1;
-  content: "0" counter(section) ".";
-  margin-right: 10px;
-  color: #64ffda;
-  font-weight: 400;
-  bottom: 4px;
-  font-size: 16px;
-}
-
 .numberedHeader {
   font-size: 26px;
   color: #ccd6f6;
@@ -36,7 +26,8 @@ html {
   z-index: 99;
   font-size: 45px;
   border: none;
-  color: #ff5851;
+  color: #64ffda;
+  background-color: transparent;
   cursor: pointer;
   border-radius: 25px;
 }
@@ -59,16 +50,10 @@ html {
 }
 
 .navList li {
-  counter-increment: item 1;
   list-style: none;
   padding: 10px;
   color: #a8b2d1;
   font-size: 13px;
-}
-
-.navList li::before {
-  content: "0" counter(item) ".";
-  color: #64ffda;
 }
 
 a {
@@ -164,15 +149,6 @@ a {
   margin: 20px;
 }
 
-.aboutMeHeader::before {
-  counter-increment: section 1;
-  content: "0" counter(section) ".";
-  margin-right: 10px;
-  color: #64ffda;
-  font-size: 16px;
-  font-weight: 400;
-}
-
 .bioText {
   width: 60%;
   text-align: justify;
@@ -196,7 +172,7 @@ span {
 
 .profileImage {
   width: 35%;
-  margin-top: 44px;
+  margin: 30px 0;
   border: 1px solid #22585e;
 }
 
@@ -245,7 +221,7 @@ ul {
 }
 
 .projectImage {
-  filter: opacity(.3);
+  filter: opacity(0.3);
 }
 
 .projectImage:hover {
@@ -267,6 +243,7 @@ ul {
   position: relative;
   z-index: 2;
   padding: 25px;
+  margin-bottom: 25px;
   background-color: #112240;
   color: #a8b2d1;
   font-size: 18px;
@@ -274,69 +251,34 @@ ul {
   letter-spacing: 1px;
 }
 
-.projectSkillsLink {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.projectSkillsLink li {
-  padding: 10px;
-}
-
-
-/*  
-.wraper {
-  padding: 30px;
-  filter: grayscale(1);
-}
-
-.wraper:hover {
-  filter: grayscale(0);
-}
-
-.projectImage {
-  height: 200px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.description {
-  width: 280px;
-  text-align: justify;
-  line-height: 25px;
-}
-
-.headline {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-size: 30px;
-}
-*/
-
-
 /*Contact section*/
-
 #contact {
   width: 100%;
   display: flex;
   min-height: 50vh;
 }
 
+.contactContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .contact {
-  width: 450px;
   min-height: 500px;
-  height: auto;
   border-radius: 5px;
-  margin: 2% auto;
+  margin: 25% auto;
   padding: 2%;
-  background-image: linear-gradient(270deg, #ff5851 50%, #fa534c99 50%);
 }
 
 .contactText {
   text-align: center;
   font-size: 40px;
   letter-spacing: 8px;
+  color: #8892b0;
+}
+
+.contactText p {
+  padding-bottom: 25px;
 }
 
 .contactWrapper {
@@ -348,14 +290,17 @@ ul {
 
 .contactForm,
 .contactMessage {
-  padding: 12px;
+  background-color: transparent;
   border: none;
-  border-bottom: 2px solid #d1d1d4;
+  border-bottom: 1px solid #22585e;
+  padding: 12px;
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 16px;
   width: 400px;
+  cursor: pointer;
+  color: aliceblue;
 }
 
 .contactForm:active,
@@ -365,22 +310,21 @@ ul {
 .contactMessage:focus,
 .contactMessage:hover {
   outline: none;
-  border-bottom-color: #ff5851;
+  border-bottom-color: #64ffda;
+}
+
+.contactLabel {
+  color: #8892b0;
 }
 
 .contactButton button {
+  background-color: transparent;
+  border: 1px solid #64ffda;
+  color: #64ffda;
   font-size: 17px;
   padding: 15px 35px;
-  border-radius: 26px;
   letter-spacing: 3px;
-  border: 1px solid #f8f8f8;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-label {
-  position: relative;
-  display: block;
 }
 
 /*Links*/
@@ -390,9 +334,167 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid #8892b0;
+  margin-top: 100px;
 }
 
 .footer p {
+  color: #22585e;
   font-size: 30px;
   padding-bottom: 25px;
+}
+
+.footerBottom {
+  padding-top: 40px;
+  color: #8892b0;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 320px) and (max-width: 767px) {
+  #home {
+    height: auto;
+  }
+
+  .navList {
+    margin: 0;
+  }
+
+  .navList li {
+    padding: 0;
+  }
+
+  .navBar {
+    display: flex;
+    justify-content: center;
+  }
+
+  #about {
+    height: auto;
+  }
+
+  .aboutContent {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .bioText {
+    width: 100%;
+  }
+
+  .bioImage {
+    width: 100%;
+  }
+
+  .homeContainer {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .bigHeader {
+    font-size: 44px;
+  }
+
+  .headline {
+    padding-right: 15px;
+  }
+
+  .homeSectionCenter {
+    margin: 10px;
+  }
+
+  .homeSectionCenter p {
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+
+  .listProjects {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .projectImage {
+    width: 300px;
+  }
+
+  .descriptionWrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactContainer {
+    width: 100%;
+  }
+
+  .contactForm,
+  .contactMessage {
+    width: 250px;
+  }
+
+  .contactCentered {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+  }
+
+  .contactButton {
+    margin-top: 50px;
+  }
+
+  .contactText p {
+    font-size: 28px;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 1800px) {
+  #home {
+    height: auto;
+  }
+
+  .homeContainer {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  #about {
+    height: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+
+  .aboutContent {
+    width: 100%;
+  }
+
+  #projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profileImage {
+    width: 80%;
+  }
+
+  .projectsWrapper {
+    padding: 0 60px;
+  }
+
+  .projectImage {
+    width: 400px;
+  }
 }

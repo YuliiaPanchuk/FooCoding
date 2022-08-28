@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import '../Admin.css';
 import { isSignedIn } from '../api/account';
 import { fetchProjects } from '../api/project';
 
-export function Admin () {
+export function Admin() {
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
 
@@ -18,15 +18,13 @@ export function Admin () {
   useEffect(() => {
     // check if user is signed in
     if (!isSignedIn()) {
-      navigate("/");
+      navigate('/');
     }
 
     displayProjects();
   }, []);
 
-  function deleteProduct() {
-
-  }
+  function deleteProduct() {}
 
   return (
     <div className="tableWrapper">
@@ -56,11 +54,7 @@ export function Admin () {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>
-                  <img
-                    className="dataImage"
-                    src={projectItem.image_url}
-                    alt="prodImg"
-                  />
+                  <img className="dataImage" src={projectItem.image_url} alt="prodImg" />
                 </td>
                 <td className="dataName">{projectItem.name}</td>
                 <td className="dataDescription">{projectItem.description}</td>
@@ -80,4 +74,4 @@ export function Admin () {
       </table>
     </div>
   );
-};
+}

@@ -13,7 +13,7 @@ export function AddProject() {
   // check if user is signed in
   useEffect(() => {
     if (!isSignedIn()) {
-      navigate("/");
+      navigate('/');
     }
   }, []);
 
@@ -23,11 +23,11 @@ export function AddProject() {
     const link = '';
     const imageUrl = imageUrlRef.current.value;
 
-    const ok = await createProject(name, description, link, imageUrl)
+    const ok = await createProject(name, description, link, imageUrl);
     if (ok) {
-      navigate("/admin");
+      navigate('/admin');
     } else {
-      alert("Failed to add project");
+      alert('Failed to add project');
     }
   }
 
@@ -57,4 +57,4 @@ export function AddProject() {
       </div>
     </div>
   );
-};
+}

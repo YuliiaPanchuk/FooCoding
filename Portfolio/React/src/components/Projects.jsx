@@ -28,17 +28,12 @@ export function Projects() {
                   <div className="descriptionWrapper">
                     <p className="description">{projectItem.description}</p>
                   </div>
-
-                  <ul className="projectSkillsLink">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                  </ul>
                 </div>
 
                 <div className="projectSource">
-                  <a href="/GITHUB_PAGE" rel="noreferrer"></a>
-                  <a href="/GITHUB_PAGE" rel="noreferrer"></a>
+                  <a href={projectItem.github_link} rel="noreferrer">
+                    <i class="fa-brands fa-github fa-2x" />
+                  </a>
                 </div>
               </div>
 

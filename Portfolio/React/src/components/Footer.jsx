@@ -12,6 +12,7 @@ export function Footer() {
           <i className="fa-brands fa-linkedin fa-xl"></i>
         </a>
       </div>
+      <small className="footerBottom">2022 Yuliia Panchuk</small>
     </div>
   );
 }

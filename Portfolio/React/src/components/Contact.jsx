@@ -2,12 +2,13 @@ import React, { useRef } from 'react';
 import { sendMessageForm } from '../api/message';
 
 export function Contact() {
-  const fullName = useRef(null); // null = init value
+  const fullName = useRef(null);
   const userEmail = useRef(null);
   const userMessage = useRef(null);
 
   function submit() {
     sendMessageForm(fullName.current.value, userEmail.current.value, userMessage.current.value);
+    alert("The message was sent!");
 
     fullName.current.value = '';
     userEmail.current.value = '';
@@ -16,37 +17,45 @@ export function Contact() {
 
   return (
     <div id="contact">
-      <div className="contact">
-        <div className="contactText">
-          <p>Contact me</p>
-        </div>
-
-        <div className="contactWrapper">
-          <div className="nameForm">
-            <label htmlFor="name">Full Name</label>
-            <input className="contactForm" type="text" name="name" ref={fullName} required />
+      <div className="contactContainer">
+        <div className="contact">
+          <div className="contactText">
+            <p>Contact me</p>
           </div>
 
-          <div className="emailForm">
-            <label htmlFor="email">Email Address</label>
-            <input className="contactForm" type="text" name="email" ref={userEmail} required />
-          </div>
-          
-          <div className="messageForm">
-            <label htmlFor="message">Your Message</label>
-            <textarea
-              className="contactMessage"
-              name="message"
-              ref={userMessage}
-              style={{ height: '200px' }}
-              required
-            />
-          </div>
+          <div className="contactWrapper">
+            <div className="nameForm contactCentered">
+              <label className="contactLabel" htmlFor="name">
+                Full Name
+              </label>
+              <input className="contactForm" type="text" name="name" ref={fullName} />
+            </div>
 
-          <div className="contactButton">
-            <button type="submit" onClick={submit}>
-              Send
-            </button>
+            <div className="emailForm contactCentered">
+              <label className="contactLabel" htmlFor="email">
+                Email Address
+              </label>
+              <input className="contactForm" type="text" name="email" ref={userEmail} />
+            </div>
+
+            <div className="messageForm contactCentered">
+              <label className="contactLabel" htmlFor="message">
+                Your Message
+              </label>
+              <textarea
+                className="contactMessage"
+                name="message"
+                ref={userMessage}
+                style={{ height: '200px' }}
+                required
+              />
+            </div>
+
+            <div className="contactButton">
+              <button type="submit" onClick={submit}>
+                Send
+              </button>
+            </div>
           </div>
         </div>
       </div>
