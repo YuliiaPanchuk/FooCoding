@@ -8,7 +8,13 @@ export function Contact() {
 
   function submit() {
     sendMessageForm(fullName.current.value, userEmail.current.value, userMessage.current.value);
-    alert("The message was sent!");
+    
+    if (fullName.current.value === '' || userEmail.current.value === '' || userMessage.current.value === '') {
+      alert("Fill in all fields!")
+    }
+    else {
+      alert("The message was sent!");
+    }
 
     fullName.current.value = '';
     userEmail.current.value = '';
@@ -47,7 +53,6 @@ export function Contact() {
                 name="message"
                 ref={userMessage}
                 style={{ height: '200px' }}
-                required
               />
             </div>
 
