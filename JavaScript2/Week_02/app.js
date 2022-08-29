@@ -71,7 +71,7 @@
   container.setAttribute('class', 'wrapper');
 
   const unorderedList = document.createElement('ul');
-  unorderedList.setAttribute("class", "ulImages");
+  unorderedList.setAttribute('class', 'ulImages');
   const title = document.createElement('h1');
   document.body.append(title);
   title.innerText = 'Top 10 books to read';
@@ -103,11 +103,9 @@
 
       btn.innerText = 'More info';
 
-      // Appending images and myDiv inside divWrapper
       divWrapper.appendChild(myDiv);
       divWrapper.appendChild(images);
 
-      // Appending elements
       document.body.appendChild(container);
       container.appendChild(unorderedList);
       unorderedList.appendChild(listItem);
