@@ -17,13 +17,13 @@ export function Home() {
 
         <div className="homeSectionCenter">
           <h3 className="bigHeader">
-            I am passionate Full stack developer with focus on Front end.
+            I am passionate Frontend developer
           </h3>
         </div>
 
         <div className="homeSectionCenter">
           <p>
-            I am looking for an opportunity to enhance my skills, offering solid competence and
+            who is looking for an opportunity to enhance my skills, offering solid competence and
             value to the team while developing personal growth.
           </p>
         </div>
