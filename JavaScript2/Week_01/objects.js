@@ -1,4 +1,4 @@
-//Styling first container
+// Styling first container
 function mainContainer(mainWrapper) {
   mainWrapper.style.height = '50vw';
 }
@@ -70,14 +70,13 @@ fetch('https://www.breakingbadapi.com/api/characters')
     console.log(data);
 
     // Styling body
-    document.body.style.backgroundImage =
-      'linear-gradient(to left top, #093009, #0d3811, #114118, #164a1f, #1a5327, #195227, #185126, #175026, #11441e, #0b3816, #062d0e, #032202)';
+    document.body.style.backgroundColor = '#295f4e';
 
     // Creating a div (container)
-    let mainWrapper = document.createElement('div');
-    let coverImage = document.createElement('img');
-    let container = document.createElement('div');
-    let headline = document.createElement('h1');
+    const mainWrapper = document.createElement('div');
+    const coverImage = document.createElement('img');
+    const container = document.createElement('div');
+    const headline = document.createElement('h1');
 
     mainContainer(mainWrapper);
     document.body.appendChild(mainWrapper);
@@ -93,14 +92,14 @@ fetch('https://www.breakingbadapi.com/api/characters')
 
     for (let i = 0; i < 10; i++) {
       // Adding properties to the HTML
-      let nameAct = document.createElement('h2');
-      let images = document.createElement('img');
+      const nameAct = document.createElement('h2');
+      const images = document.createElement('img');
       images.setAttribute('id', 'actImage');
 
-      let btn = document.createElement('button');
-      let status = document.createElement('p');
-      let bday = document.createElement('p');
-      let portrayed = document.createElement('p');
+      const btn = document.createElement('button');
+      const status = document.createElement('p');
+      const bday = document.createElement('p');
+      const portrayed = document.createElement('p');
 
       // Styling nameAct
       nameAct.style.textAlign = 'center';
@@ -109,7 +108,7 @@ fetch('https://www.breakingbadapi.com/api/characters')
 
       stylingBtn(btn);
 
-      let myDiv = document.createElement('div');
+      const myDiv = document.createElement('div');
       myDiv.appendChild(images);
       myDiv.appendChild(nameAct);
       myDiv.appendChild(bday);
@@ -131,7 +130,7 @@ fetch('https://www.breakingbadapi.com/api/characters')
       portrayed.innerText = 'Portrayed by ' + data[i].portrayed;
 
       // Display the actor status when user press the btn
-      btn.addEventListener('click', function (evt) {
+      btn.addEventListener('click', function () {
         alert('Status: ' + data[i].status);
       });
 
@@ -142,11 +141,11 @@ fetch('https://www.breakingbadapi.com/api/characters')
     // Adding container to the document
     document.body.appendChild(container);
 
-    let footerF = document.createElement('footer');
+    const footerF = document.createElement('footer');
     document.body.appendChild(footerF);
 
     // A question before the input
-    let questionText = document.createElement('h3');
+    const questionText = document.createElement('h3');
     footerF.appendChild(questionText);
     questionText.innerText = 'Who is your favorite character?';
 
@@ -156,7 +155,7 @@ fetch('https://www.breakingbadapi.com/api/characters')
     questionText.style.marginRight = '10px';
 
     // Creating a text input and adding it to the container
-    let userInput = document.createElement('input');
+    const userInput = document.createElement('input');
     userInput.type = 'text';
     footerF.appendChild(userInput);
 
@@ -165,11 +164,11 @@ fetch('https://www.breakingbadapi.com/api/characters')
     stylingFooter(footerF);
 
     // Adding OK btn
-    let btnOK = document.createElement('button');
+    const btnOK = document.createElement('button');
     btnOK.innerText = 'OK';
     footerF.appendChild(btnOK);
 
-    btnOK.addEventListener('click', function (evt) {
+    btnOK.addEventListener('click', function () {
       // Alerts the text if the user writes the first nickname (index of 0)
       if (userInput.value === data[0].nickname) {
         alert('Good choice!');
