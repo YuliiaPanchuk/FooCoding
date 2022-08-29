@@ -13,11 +13,15 @@
   cursor: pointer;
 }
 
+.adminDiv h1 {
+  color: #ccd6f6;
+}
+
 .adminInput:active,
 .adminInput:focus,
 .adminInput:hover {
   outline: none;
-  border-bottom-color: #64ffda;
+  border-bottom-color: #0091ff;
 }
 
 .adminInput {
@@ -34,11 +38,15 @@
   flex-direction: column;
 }
 
+.inputItem label {
+  color: #ccd6f6;
+}
+
 /*Button*/
 .logIn {
   background-color: transparent;
-  border: 1px solid #64ffda;
-  color: #64ffda;
+  border: 1px solid #0091ff;
+  color: #0091ff;
   font-size: 17px;
   padding: 15px 35px;
   letter-spacing: 3px;
