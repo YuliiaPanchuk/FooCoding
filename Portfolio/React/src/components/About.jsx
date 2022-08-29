@@ -13,8 +13,7 @@ export function About() {
             <span>HTML, CSS, JavaScript, Typescript, React, and Firebase</span>. <br /> <br />{' '}
             Furthermore, I am familiar with <span>Node.js, JSON, Express, Git, C#, and C++</span>.
             My goal is to DEVELOP applications that will make an impact on the world. I am EAGER to
-            develop my current skills and GAIN new knowledge. <br />
-            <br /> I'm not a pro yet, but my goal is to become one.
+            develop my current skills and GAIN new knowledge.
           </p>
         </div>
 
